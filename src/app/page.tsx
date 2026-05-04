@@ -17,7 +17,7 @@ export default async function Home () {
     <Banner />
     
      <div className=" py-12 ">
-      <h2 className=" text-2xl font-bold mb-8">Latest News</h2>
+      <h2 className=" text-2xl font-bold mb-8">Latest Product</h2>
       <div className=" grid grid-cols-1  lg:grid-cols-3 gap-6">
 
         {

@@ -2,10 +2,10 @@
 
 import { fetchNews } from '@/lib/fetchNews';
 import React, { useEffect, useState } from 'react'
-import { Product } from './../../types/news';
-import NewsCard from '../navbar/shared/NewsCard';
+import { Product } from '@/types/news';
 import SearchBar from './SearchBar';
 import CetegoryFilter from './CetegoryFilter';
+import NewsCard from '../navbar/shared/NewsCard';
 
 const NewsesList = () => {
   const [news, setNews] = useState<Product[]>([]);

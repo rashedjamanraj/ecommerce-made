@@ -13,6 +13,8 @@ import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./shared/MobileiiMenu";
+import { HiShoppingCart } from "react-icons/hi2";
+import { useCart } from "./shared/CartContext";
 
 
 
@@ -20,7 +22,7 @@ import MobileMenu from "./shared/MobileiiMenu";
 
 const Navbar = () => {
   const pathname = usePathname();
-
+  const {cart} = useCart();
   return (
     <header className="py-4 md:px-20 shadow-md ">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
@@ -36,7 +38,7 @@ const Navbar = () => {
         <NavigationMenu className=" hidden mx-auto items-center  lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem className="flex items-center space-x-8">
-              <NavigationMenuLink href="/news" className={`${pathname === '/news' ? 'text-rose-600 font-semibold cursor-pointer' : ""} hover:text-rose-600`}>News</NavigationMenuLink>
+              <NavigationMenuLink href="/news" className={`${pathname === '/news' ? 'text-rose-600 font-semibold cursor-pointer' : ""} hover:text-rose-600`}>Products</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink href="/services" className={`${pathname === '/services' ? 'text-rose-600 font-semibold cursor-pointer' : ""} hover:text-rose-600`}>
@@ -65,13 +67,25 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* color switcher and login button */}
+        {/* color switcher, login, and cart */}
         <div className=" hidden lg:flex items-center ">
           <div className=" flex items-center space-x-4">
             <span className="mr-2">Dark Mode</span>
             <Switch className=" cursor-pointer"/>
 
             <Button variant="default" className=" cursor-pointer">Login</Button>
+
+            {/* Cart button with count */}
+            <Link href="/cart">
+              <Button className="relative text-2xl rounded-t-full">
+                <HiShoppingCart className=" text-2xl " />
+                {cart.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-rose-600 text-white text-xs font-bold rounded-full px-2">
+                    {cart.length}
+                  </span>
+                )}
+              </Button>
+            </Link>
           </div>
         </div>
 
