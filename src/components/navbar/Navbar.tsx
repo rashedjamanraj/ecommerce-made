@@ -32,7 +32,7 @@ const Navbar = () => {
             <span className=" text-white px-1 mr-0.5 bg-rose-600 text-2xl rounded-bl-lg rounded-tr-lg">
               E
             </span>
-            -commerce{" "}
+            -commerce Made{" "}
           </Link>
           <p className="text-xxs text-gray-500 dark:text-gray-400">
             Building a better digital experience for everyone.
@@ -110,17 +110,17 @@ const Navbar = () => {
 
             {/* Cart button with count */}
 
-            <Button
+            <button
               onClick={() => setActivePanel("cartlist")}
-              className="relative text-2xl rounded-t-full"
+              className="relative rounded-t-full cursor-pointer"
             >
-              <HiShoppingCart className=" text-2xl cursor-pointer " />
+              <HiShoppingCart size={28}/>
               {cart.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-rose-600 text-white text-xs font-bold rounded-full px-2">
+                <span className="flex items-center absolute -top-4 -right-2.5 bg-rose-600 text-white text-xs rounded-full h-6 w-6 px-2">
                   {cart.length}
                 </span>
               )}
-            </Button>
+            </button>
             <CartList
               activePanel={activePanel}
               handleClose={() => setActivePanel("")}

@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Logo and Description */}
           <div className="text-center md:text-left">
-           <Link href="/" className=""> <span className=" text-white px-1 mr-0.5 bg-rose-600 text-2xl rounded-bl-lg rounded-tr-lg">E</span>-commerce </Link>
+           <Link href="/" className=""> <span className=" text-white px-1 mr-0.5 bg-rose-600 text-2xl rounded-bl-lg rounded-tr-lg">E</span>-commerce Made</Link>
           <p className="text-xs text-gray-500 dark:text-gray-400">
           Building a better digital experience for everyone.
           </p>
@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-8 text-center md:flex md:justify-between md:items-center">
-          <p className='text-sm'> Copyright &copy; {new Date().getFullYear()} <Link href="/" className=" text-blue-600 hover:text-red-400">E-commerce</Link> All rights reserved</p>
+          <p className='text-sm'> Copyright &copy; {new Date().getFullYear()} <Link href="/" className=" text-blue-600 hover:text-red-400">E-commerce Made</Link> All rights reserved</p>
 
           <Button variant="outline" className="mt-4 md:mt-0 dark:bg-gray-900 dark:text-white cursor-pointer">
             Subscribe

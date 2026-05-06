@@ -57,7 +57,7 @@ const CartList = ({
           ) : (
             cart.map((product: any, index: number) => (
               <div
-                key={product.id}
+                key={index}
                 className={`flex items-center gap-3 px-5 py-1 border-y border-zinc-300 ${
                   index % 2 === 0 ? "bg-blue-100" : "bg-white"
                 }`}
@@ -91,14 +91,13 @@ const CartList = ({
                       $ {product.price.toFixed(2)}
                     </span>
                     <div className="flex gap-2 py-2">
-                      const {(cart, removeFromCart, updateQuantity)} =
-                      useCart(); ...
+                     
                       <button onClick={() => updateQuantity(product.id, "dec")}>
-                        <FaMinus />
+                        <FaMinus className=" cursor-pointer"/> 
                       </button>
                       <span>{product.quantity || 1}</span>
                       <button onClick={() => updateQuantity(product.id, "inc")}>
-                        <FaPlus />
+                        <FaPlus className="cursor-pointer"/>
                       </button>
                     </div>
                   </div>
