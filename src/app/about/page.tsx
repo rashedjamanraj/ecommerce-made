@@ -5,7 +5,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen mt-3 bg-gray-50 flex flex-col items-center justify-center p-6">
       <h1 className="text-3xl font-bold mb-6 text-red-600">WHO WE ARE</h1>
       <h2 className="text-xl font-semibold mb-4">About Us E-commerce Mart</h2>
 

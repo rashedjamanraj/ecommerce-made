@@ -45,7 +45,6 @@ const MobileMenu = () => {
       />
 
       {/* Mobile menu drawer */}
-
       <div
         className={`fixed inset-0 z-50 flex transform transition-transform duration-300  ease-in-out ${
           isMenuOpen ? "  translate-x-0" : "-translate-x-full "
@@ -73,28 +72,31 @@ const MobileMenu = () => {
           </ul>
 
           {/*  Social links footer */}
-          <div className="flex space-x-4  mb-8">
-            <a
-              href="https://twitter.com/RasedJamanRaj"
-              aria-label="Twitter"
-              className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
-            >
-              <AiOutlineX size={24} />
-            </a>
-            <a
-              href="https://instagram.com/rashedjamanraj"
-              aria-label="Instagram"
-              className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
-            >
-              <AiOutlineInstagram size={24} />
-            </a>
-            <a
-              href="https://github.com/rashedjamanraj"
-              aria-label="Github"
-              className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
-            >
-              <AiOutlineGithub size={24} />
-            </a>
+          <div>
+            <div className="absolute left-0 h-px bg-white/40  w-full" />
+            <div className="flex space-x-4 mt-1.5  mb-8">
+              <a
+                href="https://twitter.com/RasedJamanRaj"
+                aria-label="Twitter"
+                className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
+              >
+                <AiOutlineX size={24} />
+              </a>
+              <a
+                href="https://instagram.com/rashedjamanraj"
+                aria-label="Instagram"
+                className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
+              >
+                <AiOutlineInstagram size={24} />
+              </a>
+              <a
+                href="https://github.com/rashedjamanraj"
+                aria-label="Github"
+                className="text-white dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-400"
+              >
+                <AiOutlineGithub size={24} />
+              </a>
+            </div>
           </div>
         </div>
 
