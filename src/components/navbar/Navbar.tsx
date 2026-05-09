@@ -50,34 +50,35 @@ const Navbar = () => {
                 Products
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/services"
-                className={`${pathname === "/services" ? "text-rose-600 font-semibold cursor-pointer" : ""} hover:text-rose-600`}
+           <NavigationMenuItem>
+              <NavigationMenuTrigger
+                className={`${
+                  pathname === "/services"
+                    ? "text-rose-600 font-semibold cursor-pointer"
+                    : ""
+                } hover:text-rose-600`}
               >
-                <NavigationMenuTrigger className=" font-normal ">
-                  Services
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className=" text-gray-600 shadow-md rounded-md px-4 py-3   ">
-                    <li>
-                      <NavigationMenuLink href="/services/web">
-                        Web Development
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink href="/services/apps">
-                        Mobile Apps
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink href="/services/seo">
-                        Seo
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuLink>
+                Services
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="text-gray-600 shadow-md rounded-md px-4 py-3">
+                  <li>
+                    <NavigationMenuLink href="/services/web">
+                      Web Development
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/services/apps">
+                      Mobile Apps
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/services/seo">
+                      SEO
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem className="flex items-center space-x-8">
               <NavigationMenuLink
