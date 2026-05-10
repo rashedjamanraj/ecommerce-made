@@ -32,7 +32,7 @@ const OrderSummeryPage = ({ handleClose }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-5">
+    <div className=" max-w-4xl mx-auto py-10 px-5">
       <h1 className="text-3xl font-bold mb-6">Order Summary</h1>
 
       {/* Totals */}

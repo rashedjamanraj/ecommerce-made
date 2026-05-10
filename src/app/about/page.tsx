@@ -5,11 +5,11 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen mt-3 bg-gray-50 flex flex-col items-center justify-center p-6">
+    <div className=" dark:bg-gray-900 dark:text-white min-h-screen mt-3 bg-gray-50 flex flex-col items-center justify-center p-6">
       <h1 className="text-3xl font-bold mb-6 text-red-600">WHO WE ARE</h1>
       <h2 className="text-xl font-semibold mb-4">About Us E-commerce Mart</h2>
 
-      <div className="max-w-3xl text-gray-700 space-y-4">
+      <div className=" dark:text-white max-w-3xl text-gray-700 space-y-4">
         <p>
           Welcome to our E-commerce Mart, <strong>www.ecommercemart.com</strong> where  meets freshness. 
           We serve delicious best products with love, using the finest ingredients. 

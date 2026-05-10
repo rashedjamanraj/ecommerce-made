@@ -15,15 +15,23 @@ import { usePathname } from "next/navigation";
 import MobileMenu from "./shared/MobileiiMenu";
 import { HiShoppingCart } from "react-icons/hi2";
 import { useCart } from "./shared/CartContext";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CartList from "./shared/CartList";
+import { ThemeContext } from "@/context/themeConext";
+
+interface ThemeContextType {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
 
 const Navbar = () => {
   const pathname = usePathname();
   const { cart } = useCart();
   const [activePanel, setActivePanel] = useState("");
+  const {isDarkMode, toggleTheme} : any = useContext(ThemeContext);
+
   return (
-    <header className="py-4 md:px-20 shadow-md ">
+    <header className={`py-4 md:px-20 shadow-md ${isDarkMode ? "bg-gray-900 text-white" : ""}`}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
         {/* logo */}
         <div className="text-xl tracking-wide font-bold ">
@@ -101,7 +109,7 @@ const Navbar = () => {
 
         {/* color switcher, login, and cart */}
         <div className=" hidden lg:flex items-center ">
-          <div className=" flex items-center space-x-4">
+          <div onClick={toggleTheme} className=" flex items-center space-x-4">
             <span className="mr-2">Dark Mode</span>
             <Switch className=" cursor-pointer" />
 

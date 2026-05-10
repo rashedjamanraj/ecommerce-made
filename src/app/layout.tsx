@@ -6,6 +6,7 @@ import Footer from "@/components/navbar/shared/Footer";
 import { CartProvider } from "@/components/navbar/shared/CartContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider } from "@/context/themeConext";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -26,13 +27,15 @@ export default function RootLayout({
     <html lang="en" >
       <CartProvider>
         <body className={` ${rubik.variable} h-full antialiased`}>
-        
-        <Navbar />
+        <ThemeProvider>
+          <Navbar />
       
         <main className="min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
 
        <ToastContainer position="top-right" autoClose={2000}/>
       <footer> <Footer /></footer>
+        </ThemeProvider>
+        
       </body>
       </CartProvider>
         

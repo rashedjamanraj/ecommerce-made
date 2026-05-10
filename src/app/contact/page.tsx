@@ -4,11 +4,11 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center mt-3 bg-gray-50 p-2 md:p-6">
+    <div className="dark:bg-gray-900 dark:text-white min-h-screen flex flex-col items-center justify-center mt-3 bg-gray-50 p-2 md:p-6">
       <h1 className="text-3xl font-bold mb-6 text-gray-700">Contact Us</h1>
 
       {/* Contact Info */}
-      <div className="bg-white shadow-md rounded-lg text-gray-600 p-6 w-full max-w-md">
+      <div className=" dark:bg-gray-900 dark:text-white bg-white shadow-md rounded-lg text-gray-600 p-6 w-full max-w-md">
         <p className="mb-2">
           <strong>Email:</strong> contact@ecommercemart.com
         </p>

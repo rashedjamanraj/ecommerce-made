@@ -24,7 +24,7 @@ const CartList = ({ activePanel, handleClose }) => {
       )}
 
       <div
-        className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed right-0 top-0 bottom-0 z-40 w-full md:w-100 border-l border-zinc-300 transform transition-transform duration-300 ${
+        className={`flex flex-col justify-between dark:bg-gray-900 dark:text-white gap-5 bg-zinc-100 fixed right-0 top-0 bottom-0 z-40 w-full md:w-100 border-l border-zinc-300 transform transition-transform duration-300 ${
           activePanel === "cartlist" ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -41,8 +41,8 @@ const CartList = ({ activePanel, handleClose }) => {
             cart.map((product, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-3 px-5 py-1 border-y border-zinc-300 ${
-                  index % 2 === 0 ? "bg-blue-100" : "bg-white"
+                className={`dark: bg-gray-900 dark:text-white flex items-center gap-3 px-5 py-1 border-y border-zinc-300 ${
+                  index % 2 === 0 ? "bg-blue-100 dark:bg-gray-900 dark:text-white" : " dark:bg-gray-900 dark:text-white bg-white"
                 }`}
               >
                 <div className="w-20 h-20 relative">
@@ -56,18 +56,18 @@ const CartList = ({ activePanel, handleClose }) => {
 
                 <div className="flex-1">
                   <div className="flex justify-between">
-                    <h4 className="font-semibold text-zinc-800 text-lg">
+                    <h4 className="font-semibold  dark:bg-gray-900 dark:text-white text-zinc-800 text-lg">
                       {product.title}
                     </h4>
                     <button
-                      className="w-7 h-7 bg-red-600 rounded-full text-white flex items-center justify-center cursor-pointer active:bg-red-800 mr-6"
+                      className="w-7 h-7  dark:bg-gray-900 dark:text-white bg-red-600 rounded-full text-white flex items-center justify-center cursor-pointer active:bg-red-800 mr-6"
                       onClick={() => removeFromCart(product.id)}
                     >
                       <FaTrash />
                     </button>
                   </div>
 
-                  <div className="flex justify-between">
+                  <div className="flex  dark:bg-gray-900 dark:text-white justify-between">
                     <span className="text-rose-600 font-semibold">
                       $ {product.price.toFixed(2)}
                     </span>
