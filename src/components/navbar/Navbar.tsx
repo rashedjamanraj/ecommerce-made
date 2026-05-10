@@ -64,7 +64,7 @@ const Navbar = () => {
                   pathname === "/services"
                     ? "text-rose-600 font-semibold cursor-pointer"
                     : ""
-                } hover:text-rose-600`}
+                } hover:text-rose-600 cursor-pointer`}
               >
                 Services
               </NavigationMenuTrigger>

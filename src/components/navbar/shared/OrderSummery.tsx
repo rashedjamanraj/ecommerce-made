@@ -2,7 +2,11 @@
 import React, { useState } from "react";
 import { useCart } from "./CartContext";
 
-const OrderSummeryPage = ({ handleClose }) => {
+type OrderSummeryProps = {
+  handleClose: () => void;
+};
+
+const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
   const { cart, clearCart } = useCart();
   const [formData, setFormData] = useState({
     name: "",
@@ -26,13 +30,13 @@ const OrderSummeryPage = ({ handleClose }) => {
       alert("Please fill all fields!");
       return;
     }
-    setFinalAmount(orderTotal);
+    setFinalAmount(orderTotal); // ✅ save before clearing
     setShowModal(true);
-    clearCart();
+    clearCart(); 
   };
 
   return (
-    <div className=" max-w-4xl mx-auto py-10 px-5">
+    <div className="max-w-4xl mx-auto py-10 px-5">
       <h1 className="text-3xl font-bold mb-6">Order Summary</h1>
 
       {/* Totals */}
