@@ -25,12 +25,14 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
 
   return (
     <>
+      {/* Overlay */}
       {activePanel === "cartlist" && (
-        <div className="fixed inset-0 z-30" onClick={handleClose} />
+        <div className="fixed inset-0 z-30 bg-black/40" onClick={handleClose} />
       )}
 
+      {/* Cart Panel */}
       <div
-        className={`flex flex-col justify-between gap-5 bg-zinc-100 dark:bg-gray-900 dark:text-white fixed right-0 top-0 bottom-0 z-40 w-full md:w-100 border-l border-zinc-300 transform transition-transform duration-300 ${
+        className={`flex flex-col justify-between gap-5 bg-zinc-100 dark:bg-gray-900 dark:text-white fixed right-0 top-0 bottom-0 z-40 w-full md:w-[400px] border-l border-zinc-300 transform transition-transform duration-300 ${
           activePanel === "cartlist" ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -38,6 +40,7 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
           <h3 className="text-3xl font-bold text-center mt-5">Your Cart</h3>
         </div>
 
+        {/* Cart Items */}
         <div className="flex-1 flex flex-col gap-2 overflow-y-auto">
           {cart.length === 0 ? (
             <p className="text-center">Your cart is empty</p>
@@ -45,8 +48,10 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
             cart.map((product, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-3 px-5 py-1 border-y border-zinc-300 ${
-                  index % 2 === 0 ? "bg-blue-100 dark:bg-gray-800" : "bg-white dark:bg-gray-900"
+                className={`flex items-center gap-3 px-5 py-2 border-y border-zinc-300 ${
+                  index % 2 === 0
+                    ? "bg-blue-100 dark:bg-gray-800"
+                    : "bg-white dark:bg-gray-900"
                 }`}
               >
                 <div className="w-20 h-20 relative">
@@ -69,16 +74,22 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
                     </button>
                   </div>
 
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-rose-600 font-semibold">
                       $ {product.price.toFixed(2)}
                     </span>
-                    <div className="flex gap-2 py-2">
-                      <button onClick={() => updateQuantity(product.id, "dec")}>
+                    <div className="flex gap-2 py-2 items-center">
+                      <button
+                        onClick={() => updateQuantity(product.id, "dec")}
+                        className="p-1 rounded bg-gray-200 dark:bg-gray-700"
+                      >
                         <FaMinus />
                       </button>
                       <span>{product.quantity || 1}</span>
-                      <button onClick={() => updateQuantity(product.id, "inc")}>
+                      <button
+                        onClick={() => updateQuantity(product.id, "inc")}
+                        className="p-1 rounded bg-gray-200 dark:bg-gray-700"
+                      >
                         <FaPlus />
                       </button>
                     </div>
@@ -89,7 +100,8 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
           )}
         </div>
 
-        <div className="px-10 border-y border-zinc-300">
+        {/* Totals */}
+        <div className="px-10 border-y border-zinc-300 dark:border-gray-700">
           <div className="flex justify-between pt-2">
             <span>Subtotal</span>
             <span>$ {subtotal.toFixed(2)}</span>
@@ -98,7 +110,7 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
             <span>Shipping</span>
             <span>$ {shippingFee.toFixed(2)}</span>
           </div>
-          <div className="flex justify-between py-2 border-t border-zinc-300">
+          <div className="flex justify-between py-2 border-t border-zinc-300 dark:border-gray-700">
             <span className="text-amber-600 text-lg font-bold">Order Total</span>
             <span className="text-amber-600 text-lg font-bold">
               $ {orderTotal.toFixed(2)}
@@ -106,6 +118,7 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
           </div>
         </div>
 
+        {/* Buttons */}
         <div className="flex gap-2 mb-3 px-10">
           <button
             className="bg-red-600 text-white flex-1 h-[7vh] text-lg font-semibold rounded-lg active:bg-red-700"
@@ -122,7 +135,7 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
             disabled={cart.length === 0}
             onClick={() => {
               setShowOrderSummary(true);
-              setOrderSummary(true); 
+              setOrderSummary(true);
             }}
           >
             Checkout
@@ -130,9 +143,10 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
         </div>
       </div>
 
+      {/* Order Summary Modal */}
       {showOrderSummary && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+          <div className="bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
             <button
               onClick={() => setShowOrderSummary(false)}
               className="absolute top-3 right-3 text-gray-600 hover:text-rose-600"

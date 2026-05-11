@@ -18,6 +18,7 @@ import { useCart } from "./shared/CartContext";
 import { useContext, useState } from "react";
 import CartList from "./shared/CartList";
 import { ThemeContext } from "@/context/themeConext";
+import DarkModeToggle from "@/context/DarkModeToggle";
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -28,10 +29,12 @@ const Navbar = () => {
   const pathname = usePathname();
   const { cart } = useCart();
   const [activePanel, setActivePanel] = useState("");
-  const {isDarkMode, toggleTheme} : any = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme }: any = useContext(ThemeContext);
 
   return (
-    <header className={`py-4 md:px-20 shadow-md ${isDarkMode ? "bg-gray-900 text-white" : ""}`}>
+    <header
+      className={`py-4 md:px-20 shadow-md ${isDarkMode ? "bg-gray-900 text-white" : ""}`}
+    >
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
         {/* logo */}
         <div className="text-xl tracking-wide font-bold ">
@@ -58,7 +61,7 @@ const Navbar = () => {
                 Products
               </NavigationMenuLink>
             </NavigationMenuItem>
-           <NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={`${
                   pathname === "/services"
@@ -109,9 +112,11 @@ const Navbar = () => {
 
         {/* color switcher, login, and cart */}
         <div className=" hidden lg:flex items-center ">
+          <DarkModeToggle />
           <div onClick={toggleTheme} className=" flex items-center space-x-4">
             <span className="mr-2">Dark Mode</span>
-            <Switch className=" cursor-pointer" />
+
+            
 
             <Button variant="default" className=" cursor-pointer">
               Login
@@ -123,7 +128,7 @@ const Navbar = () => {
               onClick={() => setActivePanel("cartlist")}
               className="relative rounded-t-full cursor-pointer"
             >
-              <HiShoppingCart size={28}/>
+              <HiShoppingCart size={28} />
               {cart.length > 0 && (
                 <span className="flex items-center absolute -top-4 -right-2.5 bg-rose-600 text-white text-xs rounded-full h-6 w-6 px-2">
                   {cart.length}

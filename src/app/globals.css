@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@tailwind components;
 
 body {
   font-family: var(--font-rubik), sans-serif;
@@ -12,9 +13,18 @@ body {
   font-size: 0.60rem; 
 }
 
-.dark {
-  @apply bg-gray-900 text-white
+
+/* Light mode default */
+body {
+  @apply bg-white text-black;
 }
+
+/* Dark mode override */
+html.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+
 
 @custom-variant dark (&:is(.dark *));
 

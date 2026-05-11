@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -47,3 +48,6 @@ const NewsCard = ({ products }: NewsCardProps) => {
 };
 
 export default NewsCard;
+
+
+// ProductNewsCart
