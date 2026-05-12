@@ -19,6 +19,8 @@ import { useContext, useState } from "react";
 import CartList from "./shared/CartList";
 import { ThemeContext } from "@/context/themeConext";
 import DarkModeToggle from "@/context/DarkModeToggle";
+import { useTheme } from "@/context/themeConext";
+
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -29,7 +31,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const { cart } = useCart();
   const [activePanel, setActivePanel] = useState("");
-  const { isDarkMode, toggleTheme }: any = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme }: any = useTheme();
 
   return (
     <header
@@ -113,7 +115,7 @@ const Navbar = () => {
         {/* color switcher, login, and cart */}
         <div className=" hidden lg:flex items-center ">
           <DarkModeToggle />
-          <div onClick={toggleTheme} className=" flex items-center space-x-4">
+          <div className=" flex items-center space-x-4">
             <span className="mr-2">Dark Mode</span>
 
             
