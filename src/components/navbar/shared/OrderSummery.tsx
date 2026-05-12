@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useCart } from "./CartContext";
+import { useTheme } from "@/context/themeConext";
 
 type OrderSummeryProps = {
   handleClose: () => void;
@@ -8,6 +9,7 @@ type OrderSummeryProps = {
 
 const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
   const { cart, clearCart } = useCart();
+    const { isDarkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     address: "",
