@@ -5,7 +5,7 @@ import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import Image from "next/image";
 import { useCart } from "./CartContext";
 import OrderSummeryPage from "./OrderSummery";
-import { useTheme } from "@/context/themeContext"
+import { useTheme } from "@/context/themeConext"
 
 type CartListProps = {
   activePanel: string;
