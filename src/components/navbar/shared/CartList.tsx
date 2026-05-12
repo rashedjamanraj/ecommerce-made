@@ -5,6 +5,7 @@ import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import Image from "next/image";
 import { useCart } from "./CartContext";
 import OrderSummeryPage from "./OrderSummery";
+import { useTheme } from "@/context/themeContext"
 
 type CartListProps = {
   activePanel: string;
@@ -15,6 +16,7 @@ type CartListProps = {
 const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) => {
   const { cart, removeFromCart, updateQuantity } = useCart();
   const [showOrderSummary, setShowOrderSummary] = useState(false);
+   const { isDarkMode, toggleTheme } = useTheme();
 
   const subtotal = cart.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),
@@ -38,6 +40,12 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
       >
         <div className="px-10">
           <h3 className="text-3xl font-bold text-center mt-5">Your Cart</h3>
+          <button
+            onClick={toggleTheme}
+            className="ml-4 px-3 py-1 rounded bg-gray-300 dark:bg-gray-700 text-sm"
+          >
+            {isDarkMode ? "Light Mode" : "Dark Mode"}
+          </button>
         </div>
 
         {/* Cart Items */}
