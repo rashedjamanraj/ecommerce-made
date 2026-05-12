@@ -3,10 +3,11 @@
 import { useContext } from "react";
 import { ThemeContext } from "@/context/themeConext";
 import { Switch } from "../components/ui/switch";
-import { Sun, Moon, SwitchCamera } from "lucide-react"; // ✅ icon library
+import { Sun, Moon, SwitchCamera } from "lucide-react"; 
+import { useTheme } from "@/context/themeContext";
 
 const DarkModeToggle = () => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme } = useTheme();
 
   return (
     <div className="flex items-center space-x-2">
