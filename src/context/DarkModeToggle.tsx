@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ThemeContext } from "@/context/themeConext";
 import { Switch } from "../components/ui/switch";
 import { Sun, Moon, SwitchCamera } from "lucide-react"; 
-import { useTheme } from "@/context/themeContext";
+import { useTheme } from "@/context/themeConext";
 
 const DarkModeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme();
