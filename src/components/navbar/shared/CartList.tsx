@@ -42,7 +42,7 @@ const CartList = ({ activePanel, handleClose, setOrderSummary }: CartListProps) 
           <h3 className="text-3xl font-bold text-center mt-5">Your Cart</h3>
           <button
             onClick={toggleTheme}
-            className="ml-4 px-3 py-1 rounded bg-gray-300 dark:bg-gray-700 text-sm"
+            className="ml-4 px-3 py-1 rounded bg-gray-300 item-center justify-center  dark:bg-gray-700 text-sm"
           >
             {isDarkMode ? "Light Mode" : "Dark Mode"}
           </button>
