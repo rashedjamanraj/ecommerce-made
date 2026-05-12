@@ -84,7 +84,7 @@ const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
         <select
           value={formData.payment}
           onChange={(e) => setFormData({ ...formData, payment: e.target.value })}
-          className="w-full border rounded p-2"
+          className="w-full border rounded p-2 dark:bg-gray-900 dark:text-white"
         >
           <option>Cash on Delivery</option>
           <option>Visa Card</option>
@@ -103,12 +103,12 @@ const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
 
       {/* Confirmation Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center dark:bg-gray-900 dark:text-white justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-4 text-green-600">
               🎉 Order Placed Successfully!
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 dark:bg-gray-900 dark:text-white">
               Thank you <strong>{formData.name}</strong>, your order has been
               placed successfully.
             </p>
