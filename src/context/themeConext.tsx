@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react"; 
 
 interface ThemeContextType {
   isDarkMode: boolean;
