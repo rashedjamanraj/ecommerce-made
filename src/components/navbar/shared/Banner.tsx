@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import React from 'react'
-import bannerImg from "@/assests/banner.jpg"
+import bannerImg from "@/assests/banner-pic.png"
 
 const Banner = () => {
   return (
@@ -16,10 +16,9 @@ const Banner = () => {
         
         {/* content */}
         <div className=' space-y-4 flex flex-col'>
-          <h4 className='text-sm font-medium text-gray-500'>Technology</h4>
-          <h2 className='text-2xl font-bold'>Scientific knowledge to the practical aims of human life</h2>
-          <p>Problem solving, particularly in artificial intelligence, may be characterized as a systematic search through a range of possible actions in order to reach some predefined goal or solution.</p> <br />
-          <p>A special-purpose method is tailor-made for a particular problem and often exploits very specific features of the situation in which the problem is embedded. In contrast, a general-purpose method is applicable to a wide variety of problems. </p>
+          <h4 className='text-sm font-medium text-gray-500'>E-commerce</h4>
+          <h2 className='text-2xl font-bold'>Our team and our community is always here to support you</h2>
+          <p>This product is a perfect blend of elegance, quality, and functionality. Crafted with premium materials and designed for modern lifestyles, it offers durability and style in every detail. Its sleek appearance and user-friendly features make it ideal for daily use, while the refined craftsmanship ensures long-lasting performance. Whether you’re upgrading your home, wardrobe, or workspace, this product delivers both comfort and sophistication. It’s not just an item—it’s an experience that enhances your everyday life.</p>
           <Button variant="default" className=' cursor-pointer'>Read More</Button>
         </div>
       </div>
