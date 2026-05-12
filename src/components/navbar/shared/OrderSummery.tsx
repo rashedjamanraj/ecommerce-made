@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useCart } from "./CartContext";
-import { useTheme } from "@/context/themeConext";
 
 type OrderSummeryProps = {
   handleClose: () => void;
@@ -9,7 +8,6 @@ type OrderSummeryProps = {
 
 const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
   const { cart, clearCart } = useCart();
-    const { isDarkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -32,17 +30,17 @@ const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
       alert("Please fill all fields!");
       return;
     }
-    setFinalAmount(orderTotal); // ✅ save before clearing
+    setFinalAmount(orderTotal);
     setShowModal(true);
-    clearCart(); 
+    clearCart();
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-5 dark:bg-gray-900 dark:text-white">
+    <div className="max-w-4xl mx-auto py-10 px-5 bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-6">Order Summary</h1>
 
       {/* Totals */}
-      <div className="mt-4 border rounded-md p-4 space-y-2">
+      <div className="mt-4 border rounded-md p-4 space-y-2 dark:border-gray-700">
         <div className="flex justify-between">
           <span>Subtotal</span>
           <span>$ {subtotal.toFixed(2)}</span>
@@ -64,27 +62,27 @@ const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
           placeholder="Full Name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full border rounded p-2"
+          className="w-full border rounded p-2 dark:bg-gray-800 dark:border-gray-600"
         />
         <input
           type="text"
           placeholder="Address"
           value={formData.address}
           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-          className="w-full border rounded p-2"
+          className="w-full border rounded p-2 dark:bg-gray-800 dark:border-gray-600"
         />
         <input
           type="tel"
           placeholder="Phone Number"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full border rounded p-2"
+          className="w-full border rounded p-2 dark:bg-gray-800 dark:border-gray-600"
         />
 
         <select
           value={formData.payment}
           onChange={(e) => setFormData({ ...formData, payment: e.target.value })}
-          className="w-full border rounded p-2 dark:bg-gray-900 dark:text-white"
+          className="w-full border rounded p-2 dark:bg-gray-800 dark:border-gray-600"
         >
           <option>Cash on Delivery</option>
           <option>Visa Card</option>
@@ -103,12 +101,12 @@ const OrderSummeryPage = ({ handleClose }: OrderSummeryProps) => {
 
       {/* Confirmation Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center dark:bg-gray-900 dark:text-white justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 dark:text-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-4 text-green-600">
               🎉 Order Placed Successfully!
             </h2>
-            <p className="mb-4 dark:bg-gray-900 dark:text-white">
+            <p className="mb-4">
               Thank you <strong>{formData.name}</strong>, your order has been
               placed successfully.
             </p>
